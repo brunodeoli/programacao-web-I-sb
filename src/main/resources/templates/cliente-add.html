@@ -29,29 +29,44 @@
                     <input class="form-check-input" type="radio" name="flexRadioDefault" value="CNPJ" id="flexRadioDefault2" th:field="*{tipoDeCadastro}" checked>
                     <label class="form-check-label" for="flexRadioDefault2">CNPJ</label>
                 </div>
+                <ul>
+                    <li th:each="erro : ${#fields.errors('tipoDeCadastro')}" th:text="${erro}" />
+                </ul>
             </div>
             <div class="mb-3 row">
-                <label for="inputDocumento" class="col-sm-2 col-form-label">CPF/CPNJ</label>
+                <label for="inputDocumento" class="col-sm-2 col-form-label">CPF/CNPJ</label>
                 <div class="col-sm-3">
                     <input type="text" th:readonly="${add} ? 'false' : 'true'" th:field="*{documento}" class="form-control" id="inputDocumento">
+                    <ul>
+                        <li th:each="erro : ${#fields.errors('documento')}" th:text="${erro}" />
+                    </ul>
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="inputNome" class="col-sm-2 col-form-label">Nome</label>
                 <div class="col-sm-3">
                     <input type="text" th:field="*{nome}" class="form-control" id="inputNome">
+                    <ul>
+                        <li th:each="erro : ${#fields.errors('nome')}" th:text="${erro}" />
+                    </ul>
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="inputTelefone" class="col-sm-2 col-form-label">Telefone</label>
                 <div class="col-sm-3">
                     <input type="text" th:field="*{telefone}" class="form-control" id="inputTelefone">
+                    <ul>
+                        <li th:each="erro : ${#fields.errors('telefone')}" th:text="${erro}" />
+                    </ul>
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-3">
                     <input type="text" th:field="*{email}" class="form-control" id="inputEmail">
+                    <ul>
+                        <li th:each="erro : ${#fields.errors('email')}" th:text="${erro}" />
+                    </ul>
                 </div>
             </div>
             <hr>

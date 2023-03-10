@@ -14,7 +14,7 @@ public class ClienteService {
     @Autowired
     private LocateCarRepository clienteRepository;
 
-    public void createCliente(Cliente cliente) {
+    public void criarCliente(Cliente cliente) {
         this.clienteRepository.save(cliente);
     }
 
